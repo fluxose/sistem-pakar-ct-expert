@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Konsultasi - CT Expert</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">
+                <img src="assets/logo-radiasi.png" alt="Logo Sistem Pakar">
+            </div>
+            <div>
+                <h2>CT Expert</h2>
+                <small>Sistem Pakar CT-Scan</small>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">▦ Konsultasi</a>
+            <a href="riwayat.html" class="nav-link">◷ Riwayat Konsultasi</a>
+            <a href="gejala.html" class="nav-link">☷ Manajemen Gejala</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar no-print">
+            <div>
+                <p class="eyebrow">HASIL ANALISIS</p>
+                <h1>Hasil Konsultasi</h1>
+                <p class="muted">Hasil perhitungan Certainty Factor.</p>
+            </div>
+            <a href="index.html" class="btn btn-secondary">Konsultasi Baru</a>
+        </header>
+
+        <div id="hasilContainer">
+            <div class="loading">Memuat hasil konsultasi...</div>
+        </div>
+
+        <div class="form-actions no-print">
+            <a href="riwayat.html" class="btn btn-secondary">
+                Lihat Riwayat
+            </a>
+            <button onclick="window.print()" class="btn btn-primary">
+                Cetak Hasil
+            </button>
+        </div>
+
+        <footer class="footer">
+            Sistem Pakar Penentuan Tingkat Reaksi Media Kontras pada CT-Scan
+        </footer>
+    </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/hasil.js"></script>
+</body>
+</html>

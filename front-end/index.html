@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsultasi - Sistem Pakar CT-Scan</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">
+                <img src="assets/logo-radiasi.png" alt="Logo Sistem Pakar">
+            </div>
+            <div>
+                <h2>CT Expert</h2>
+                <small>Sistem Pakar CT-Scan</small>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link active">
+                <span>▦</span> Konsultasi
+            </a>
+            <a href="riwayat.html" class="nav-link">
+                <span>◷</span> Riwayat Konsultasi
+            </a>
+            <a href="gejala.html" class="nav-link">
+                <span>☷</span> Manajemen Gejala
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <small>Certainty Factor Method</small>
+            <small>Versi 1.0</small>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">SISTEM PAKAR / KONSULTASI</p>
+                <h1>Konsultasi Pasien</h1>
+                <p class="muted">Penilaian tingkat reaksi media kontras CT-Scan.</p>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                Sistem Aktif
+            </div>
+        </header>
+
+        <form id="formKonsultasi">
+
+            <section class="panel">
+                <div class="section-heading">
+                    <div>
+                        <h2>Identitas Pasien</h2>
+                        <p>Lengkapi informasi pasien sebelum konsultasi.</p>
+                    </div>
+                    <span class="step-label">01 / 02</span>
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="no_rm">Nomor Rekam Medis *</label>
+                        <input type="text" id="no_rm"
+                            placeholder="Contoh: RM001" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nama_pasien">Nama Pasien *</label>
+                        <input type="text" id="nama_pasien"
+                            placeholder="Masukkan nama pasien" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="usia">Usia (tahun) *</label>
+                        <input type="number" id="usia"
+                            min="0" max="255" placeholder="Contoh: 25" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jenis_kelamin">Jenis Kelamin *</label>
+                        <select id="jenis_kelamin" required>
+                            <option value="">Pilih jenis kelamin</option>
+                            <option value="L">Laki-laki</option>
+                            <option value="P">Perempuan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Konsultasi *</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="section-heading">
+                    <div>
+                        <h2>Penilaian Gejala</h2>
+                        <p>Pilih tingkat keyakinan berdasarkan kondisi pasien.</p>
+                    </div>
+                    <span class="step-label">02 / 02</span>
+                </div>
+
+                <div class="legend">
+                    <span><i class="legend-dot ringan"></i> Reaksi Ringan</span>
+                    <span><i class="legend-dot sedang"></i> Reaksi Sedang</span>
+                    <span><i class="legend-dot berat"></i> Reaksi Berat</span>
+                </div>
+
+                <div id="daftarGejala">
+                    <div class="loading">Memuat data gejala...</div>
+                </div>
+
+                <div id="pesanKonsultasi" class="alert" hidden></div>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn btn-secondary">
+                        Reset Form
+                    </button>
+
+                    <button type="submit" id="btnProses" class="btn btn-primary">
+                        Proses Konsultasi →
+                    </button>
+                </div>
+            </section>
+
+        </form>
+
+        <footer class="footer">
+            Sistem Pakar Penentuan Tingkat Reaksi Media Kontras pada CT-Scan
+        </footer>
+
+    </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/konsultasi.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Konsultasi - CT Expert</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">
+                <img src="assets/logo-radiasi.png" alt="Logo Sistem Pakar">
+            </div>
+            <div>
+                <h2>CT Expert</h2>
+                <small>Sistem Pakar CT-Scan</small>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">▦ Konsultasi</a>
+            <a href="riwayat.html" class="nav-link active">◷ Riwayat Konsultasi</a>
+            <a href="gejala.html" class="nav-link">☷ Manajemen Gejala</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">DATA KONSULTASI</p>
+                <h1>Riwayat Konsultasi</h1>
+                <p class="muted">Cari dan lihat hasil konsultasi pasien.</p>
+            </div>
+            <a href="index.html" class="btn btn-primary">+ Konsultasi Baru</a>
+        </header>
+
+        <section class="panel">
+            <div class="search-row">
+                <input type="search" id="cariRiwayat"
+                    placeholder="Cari nama pasien atau nomor RM...">
+                <button type="button" id="btnCari" class="btn btn-primary">
+                    Cari
+                </button>
+            </div>
+
+            <div id="pesanRiwayat" class="alert" hidden></div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nomor RM</th>
+                            <th>Nama Pasien</th>
+                            <th>Tanggal</th>
+                            <th>Kesimpulan</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelRiwayat">
+                        <tr><td colspan="6" class="empty-cell">
+                            Memuat data...
+                        </td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer">
+            Sistem Pakar Penentuan Tingkat Reaksi Media Kontras pada CT-Scan
+        </footer>
+    </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/riwayat.js"></script>
+</body>
+</html>

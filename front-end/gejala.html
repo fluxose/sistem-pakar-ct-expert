@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Gejala - CT Expert</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">
+				<img src="assets/logo-radiasi.png" alt="Logo Sistem Pakar">
+			</div>
+            <div>
+				<h2>CT Expert</h2>
+				<small>Sistem Pakar CT-Scan</small>
+			</div>
+        </div>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">▦ Konsultasi</a>
+            <a href="riwayat.html" class="nav-link">◷ Riwayat Konsultasi</a>
+            <a href="gejala.html" class="nav-link active">☷ Manajemen Gejala</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">PENGELOLAAN BASIS PENGETAHUAN</p>
+                <h1>Manajemen Gejala</h1>
+                <p class="muted">Kelola data gejala dan nilai CF pakar.</p>
+            </div>
+        </header>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2 id="judulFormGejala">Tambah Gejala</h2>
+                    <p>Masukkan informasi gejala yang akan disimpan.</p>
+                </div>
+            </div>
+
+            <form id="formGejala">
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="kode_gejala">Kode Gejala *</label>
+                        <input type="text" id="kode_gejala"
+                            placeholder="Contoh: G18" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nama_gejala">Nama Gejala *</label>
+                        <input type="text" id="nama_gejala"
+                            placeholder="Masukkan nama gejala" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tingkat">Tingkat Reaksi *</label>
+                        <select id="tingkat" required>
+                            <option value="">Pilih tingkat</option>
+                            <option value="cr">Ringan (cr)</option>
+                            <option value="cs">Sedang (cs)</option>
+                            <option value="cb">Berat (cb)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cf_pakar">Nilai CF Pakar *</label>
+                        <input type="number" id="cf_pakar"
+                            min="0" max="1" step="0.01"
+                            placeholder="Contoh: 0.8" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kritis">Status Gejala *</label>
+                        <select id="kritis" required>
+                            <option value="false">Tidak Kritis</option>
+                            <option value="true">Kritis</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div id="pesanGejala" class="alert" hidden></div>
+
+                <div class="form-actions">
+                    <button type="button" id="btnBatalEdit"
+                        class="btn btn-secondary" hidden>
+                        Batal Edit
+                    </button>
+                    <button type="submit" id="btnSimpanGejala"
+                        class="btn btn-primary">
+                        Simpan Gejala
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Daftar Gejala</h2>
+                    <p>Data gejala yang tersimpan dalam database.</p>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kode</th>
+                            <th>Nama Gejala</th>
+                            <th>Tingkat</th>
+                            <th>CF Pakar</th>
+                            <th>Kritis</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelGejala">
+                        <tr><td colspan="6" class="empty-cell">
+                            Memuat data...
+                        </td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer">
+            Sistem Pakar Penentuan Tingkat Reaksi Media Kontras pada CT-Scan
+        </footer>
+    </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/gejala.js"></script>
+</body>
+</html>
